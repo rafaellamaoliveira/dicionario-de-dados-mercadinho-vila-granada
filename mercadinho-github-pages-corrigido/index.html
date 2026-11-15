@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dicionário de Dados - Mercadinho Vila Granada</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <button id="menu" aria-label="Abrir menu">Menu</button>
+  <div class="ttl"><h1>Dicionário de Dados - Sistema de Gestão Operacional e Vendas</h1><small>Mercadinho Vila Granada LTDA</small></div>
+  <button id="theme">Modo escuro</button>
+</header>
+<div class="layout">
+  <nav id="side"><h2>Tabelas</h2><div id="nav"></div></nav>
+  <main>
+    <section id="identificacao" class="card">
+      <h2>Identificação do Projeto</h2>
+      <p><b>1. Escopo:</b> Modelagem do banco de dados do Sistema de Gestão Operacional e Vendas do Mercadinho Vila Granada LTDA, que centraliza produtos, setores, localizações de estoque, recebimento e conferência de mercadorias, movimentações, preços e etiquetas, vendas no caixa, delivery via WhatsApp, pedidos de compra, auditoria e conformidade com a LGPD.</p>
+      <p><b>2. Tecnologia:</b> MySQL.</p>
+      <p><b>3. Responsáveis:</b></p>
+      <ul>
+        <li>José Samuel Araújo Leal - Data Owner (Regras de Negócio; autoria do modelo de referência).</li>
+        <li>José Samuel Araújo Leal - Data Steward (Qualidade Técnica e Dicionário; autoria do modelo de referência).</li>
+        <li>Gabriella Oliveira - Publicação individual no GitHub Pages.</li>
+        <li>Orientação: Prof. Dr. Diego Carvalho (UNICID, disciplina SQL - Grupo 1).</li>
+      </ul>
+      <p class="muted">Legenda RBAC: C = criar, R = ler, U = atualizar, D = excluir (lógico). Nenhuma coluna foi classificada como DPS, pois o modelo não armazena dados sensíveis (art. 5º, II, da LGPD). Constraints extraídas do modelo MySQL Workbench (mercadinho_vila_granada, InnoDB, utf8mb4).</p>
+    </section>
+    <div class="panel">
+      <a class="btn" href="docs/Especificacao_Requisitos_Regras_Negocio_BD.pdf" download>Baixar Especificação de Requisitos (PDF)</a>
+      <button class="btn" id="der">Abrir DER</button>
+      <input id="q" type="search" placeholder="Pesquisar tabela ou coluna..." aria-label="Pesquisar">
+    </div>
+    <div id="dict"></div>
+    <p id="none" hidden>Nenhum resultado encontrado.</p>
+  </main>
+</div>
+<div id="modal" hidden>
+  <div class="bar"><button id="zi">Zoom +</button><button id="zo">Zoom -</button><button id="zr">Reset</button><button id="zx">Fechar</button></div>
+  <div id="stage"><img id="img" src="asset/der.png" alt="Diagrama Entidade-Relacionamento"></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
